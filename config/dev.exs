@@ -41,3 +41,6 @@ config :email_swoosh, EmailSwoosh.Repo,
   database: "email_swoosh_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :email_swoosh, EmailSwoosh.Mailer,
+  adapter: Swoosh.Adapters.Local

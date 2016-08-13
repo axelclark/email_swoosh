@@ -23,4 +23,8 @@ defmodule EmailSwoosh.Router do
   # scope "/api", EmailSwoosh do
   #   pipe_through :api
   # end
+  scope "/dev" do
+    pipe_through [:browser]
+    forward "/mailbox", Plug.Swoosh.MailboxPreview, [base_path: "/dev/mailbox"]
+  end
 end
